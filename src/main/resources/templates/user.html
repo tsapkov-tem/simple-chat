@@ -1,0 +1,26 @@
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>User</title>
+</head>
+<body>
+<div class="container">
+    <div class="container">
+        <form class="form-register"  th:object="${user}" >
+            <h2 class="form-register-heading">User</h2>
+            <p>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.role}"></td>
+            <td th:text="${user.status}"></td>
+            </p>
+        </form>
+    </div>
+    <form action="/auth/logout" method="POST">
+        <button type="submit">
+            Logout
+        </button>
+    </form>
+</div>
+</body>
+</html>

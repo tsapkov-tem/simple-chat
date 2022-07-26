@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Users</title>
+    <style>table th, table td {padding: 5px;}</style>
+</head>
+<body>
+<h1>Users</h1>
+<table>
+    <tr>
+        <th>Username</th>
+        <th>Role</th>
+        <th>Status</th>
+    </tr>
+    <tr th:each="user : ${users}">
+        <td th:utext="${user.username}">brand</td>
+        <td th:utext="${user.role}">color</td>
+        <td th:utext="${user.status}">power</td>
+    </tr>
+</table>
+<form action="/auth/logout" method="POST">
+    <button type="submit">
+        Logout
+    </button>
+</form>
+</body>
+</html>

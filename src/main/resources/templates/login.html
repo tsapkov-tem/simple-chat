@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+</head>
+<body>
+<div class="container">
+<form class="form-singin" action="/auth/login" method="post">
+    <h2 class="form-singin-heading">Login</h2>
+    <p>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required>
+    </p>
+    <p>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+    </p>
+    <form action="/success" method="POST">
+        <button type="submit">
+            Log in
+        </button>
+    </form>
+    <p>
+        New in? Please, <a href="/register">register!</a>
+    </p>
+</form>
+</div>
+</body>
+</html>
