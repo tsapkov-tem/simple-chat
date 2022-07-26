@@ -1,7 +1,6 @@
-package com.example.mongodb.spring.Services;
+package com.simplechat.Services;
 
-
-import com.example.mongodb.spring.Models.Users.Users;
+import com.simplechat.Models.Users.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;

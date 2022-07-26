@@ -1,4 +1,4 @@
-package com.example.simplechat;
+package com.simplechat;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

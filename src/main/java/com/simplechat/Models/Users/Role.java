@@ -1,4 +1,4 @@
-package com.example.mongodb.spring.Models.Users;
+package com.simplechat.Models.Users;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 

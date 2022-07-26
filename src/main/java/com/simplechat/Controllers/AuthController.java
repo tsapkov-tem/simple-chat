@@ -1,4 +1,4 @@
-package com.example.mongodb.spring.Controllers;
+package com.simplechat.Controllers;
 
 
 import org.springframework.stereotype.Controller;

@@ -1,6 +1,6 @@
-package com.example.mongodb.spring.Controllers;
+package com.simplechat.Controllers;
 
-import com.example.mongodb.spring.Services.CurrentModel;
+import com.simplechat.Services.CurrentModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;

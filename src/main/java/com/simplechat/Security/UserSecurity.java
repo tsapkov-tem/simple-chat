@@ -1,9 +1,7 @@
-package com.example.mongodb.spring.Security;
+package com.simplechat.Security;
 
-
-
-import com.example.mongodb.spring.Models.Users.Status;
-import com.example.mongodb.spring.Models.Users.Users;
+import com.simplechat.Models.Users.Status;
+import com.simplechat.Models.Users.Users;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

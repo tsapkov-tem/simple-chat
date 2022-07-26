@@ -1,8 +1,7 @@
-package com.example.mongodb.spring.Services;
+package com.simplechat.Services;
 
-
-import com.example.mongodb.spring.Models.Users.Users;
-import com.example.mongodb.spring.Repositories.UsersRepository;
+import com.simplechat.Repositories.UsersRepository;
+import com.simplechat.Models.Users.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

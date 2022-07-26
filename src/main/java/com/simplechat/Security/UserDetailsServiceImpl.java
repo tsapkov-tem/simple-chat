@@ -1,8 +1,7 @@
-package com.example.mongodb.spring.Security;
+package com.simplechat.Security;
 
-
-import com.example.mongodb.spring.Models.Users.Users;
-import com.example.mongodb.spring.Repositories.UsersRepository;
+import com.simplechat.Repositories.UsersRepository;
+import com.simplechat.Models.Users.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,7 +20,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Users user = usersRepository.findByUsername (username);//orElseThrow (() -> new UsernameNotFoundException ("User doesn't exist"));
+        Users user = usersRepository.findByUsername (username);
+        if (user == null) {
+            new UsernameNotFoundException ("User doesn't exist");
+        }
         return UserSecurity.fromUser (user);
     }
 }
