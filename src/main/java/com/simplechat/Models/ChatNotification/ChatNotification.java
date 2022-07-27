@@ -1,4 +1,4 @@
-package com.simplechat.Models.ChatRoom;
+package com.simplechat.Models.ChatNotification;
 
 import lombok.Builder;
 import lombok.Data;
@@ -6,10 +6,9 @@ import org.springframework.data.annotation.Id;
 
 @Data
 @Builder
-public class ChatRoom {
+public class ChatNotification {
     @Id
     private String id;
-    private String chatId;
     private String senderId;
-    private String recipientId;
+    private String senderName;
 }

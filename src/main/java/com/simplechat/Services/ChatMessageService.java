@@ -14,7 +14,8 @@ public class ChatMessageService {
         this.repository = repository;
     }
 
-    public void saveMessage(ChatMessage chatMessage){
+    public ChatMessage saveMessage(ChatMessage chatMessage){
         repository.save (chatMessage);
+        return chatMessage;
     }
 }
