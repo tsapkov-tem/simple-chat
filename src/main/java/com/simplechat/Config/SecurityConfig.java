@@ -39,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage ("/auth/login").permitAll ()
-                 .defaultSuccessUrl ("/success")
+                 .defaultSuccessUrl ("/success", true)
                 .and()
                 .logout ()
                 .logoutRequestMatcher (new AntPathRequestMatcher ("/auth/logout", "POST"))
@@ -50,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    protected void configure(AuthenticationManagerBuilder auth) {
         auth.authenticationProvider (daoAuthenticationProvider ());
     }
 

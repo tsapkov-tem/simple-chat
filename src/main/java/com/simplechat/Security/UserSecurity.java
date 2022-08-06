@@ -62,7 +62,8 @@ public class UserSecurity implements UserDetails {
     }
 
     public static UserDetails fromUser(Users user){
-        return new User (user.getUsername (), user.getPassword (), user.getStatus().equals(Status.ACTIVE),user.getStatus().equals(Status.ACTIVE),user.getStatus().equals(Status.ACTIVE),user.getStatus().equals(Status.ACTIVE), user.getRole ().getAuthorities ()
+        boolean activity = user.getStatus().equals(Status.ACTIVE) || user.getStatus().equals(Status.NEW);
+        return new User (user.getUsername (), user.getPassword (), activity,activity,activity,activity, user.getRole ().getAuthorities ()
         );
     }
 }

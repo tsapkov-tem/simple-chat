@@ -37,11 +37,11 @@ public class RegisterController {
         user.setUsername (username);
         user.setPassword(passwordEncoder.encode (password));
         user.setRole (Role.USER);
-        user.setStatus (Status.ACTIVE);
+        user.setStatus (Status.NEW);
         try {
             usersService.save (user);
         }catch (DuplicateKeyException e){
-            return "redirect:/register"; //todo
+            return "/register";
         }
         return "redirect:/login";
     }

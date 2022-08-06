@@ -1,5 +1,5 @@
 <html lang="en">
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="">
 <head>
     <meta charset="utf-8">
     <title>Register</title>
@@ -16,7 +16,7 @@
             <label for="password">Password</label>
             <input type="password" id="password" th:field="*{password}" class="form-control" placeholder="Password" required>
         </p>
-        <form action="/register" method="get">
+        <form id="register-form" name="register-form" >
             <button type="submit">
                 Register
             </button>

@@ -4,7 +4,6 @@ import com.simplechat.Repositories.UsersRepository;
 import com.simplechat.Models.Users.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -18,7 +17,7 @@ public class UsersService {
     }
 
     public List<Users> listAll(){
-        return (List<Users>) repository.findAll ();
+        return repository.findAll ();
     }
 
     public Users findByUsername(String username){

@@ -1,5 +1,6 @@
 package com.simplechat.Controllers;
 
+import com.simplechat.Models.Users.Role;
 import com.simplechat.Services.CurrentModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -21,13 +22,10 @@ public class MainController {
     @GetMapping("/success")
     @PreAuthorize ("hasAnyAuthority('read', 'all')")
     public String showHomePage(){
-        switch (currentModel.getCurrentUser ().getRole ()){
-            case ADMIN -> {
-                return "redirect:/admin";
-            }
-            default ->  {
-                return "redirect:/user";
-            }
+        currentModel.uploadCurrentUser ();
+        if (Role.ADMIN.equals (currentModel.getCurrentUser ().getRole ())) {
+            return "redirect:/admin";
         }
+        return "redirect:/user";
     }
 }

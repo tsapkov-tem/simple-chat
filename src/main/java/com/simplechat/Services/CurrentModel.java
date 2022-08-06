@@ -9,13 +9,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class CurrentModel {
     private final UsersService usersService;
+    private Users currentUser;
 
     @Autowired
     public CurrentModel(UsersService usersService) {
         this.usersService = usersService;
     }
 
-    public Users getCurrentUser(){
+    public void uploadCurrentUser(){
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username;
         if (principal instanceof UserDetails) {
@@ -23,6 +24,10 @@ public class CurrentModel {
         } else {
             username = principal.toString();
         }
-        return usersService.findByUsername (username);
+        currentUser = usersService.findByUsername (username);
+    }
+
+    public Users getCurrentUser(){
+        return currentUser;
     }
 }
