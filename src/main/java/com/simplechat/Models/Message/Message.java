@@ -3,6 +3,8 @@ package com.simplechat.Models.Message;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
+import java.util.Date;
+
 @Data
 public class Message {
 
@@ -14,6 +16,6 @@ public class Message {
     private MessageType type;
     private String content;
     private String sender;
-    private String time;
+    private Date time;
 }
 
