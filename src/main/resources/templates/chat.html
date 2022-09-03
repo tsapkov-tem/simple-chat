@@ -10,7 +10,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
     <script type="text/javascript" src="https://momentjs.com/downloads/moment.min.js"></script>
-
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-16x16.png">
 
 </head>
@@ -18,6 +17,36 @@
 
 <div class="container-fluid h-100">
     <div id="chat-page" class="main">
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" style="padding-left: 5%" href="/chat"
+            >Simple chat</a
+            >
+            <form class="form-inline">
+                <button
+                        th:onclick="|window.location.href='/user'|"
+                        class="btn btn-outline-success my-2 my-sm-0"
+                        type="button"
+                >
+                    My profile
+                </button>
+                <button
+                        th:onclick="|window.location.href='/admin'|"
+                        id="admin-button"
+                        style="display: none"
+                        class="btn btn-outline-success my-2 my-sm-0"
+                        type="button"
+                >
+                    Admin
+                </button>
+                <button
+                        th:onclick="|window.location.href='/auth/logout'|"
+                        class="btn btn-outline-success my-2 my-sm-0"
+                        type="button"
+                >
+                    Exit
+                </button>
+            </form>
+        </nav>
         <div class="row justify-content-center h-100">
 
             <div class="col-md-8 col-xl-6">
@@ -56,7 +85,15 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
-<script src="/js/script.js"></script>
-
+<script src="/js/chat.js"></script>
+<script th:inline="javascript">
+    const addAdminButton = () =>{
+        if([[${role}]] === "ADMIN"){
+            let adminButton = document.getElementById("admin-button")
+            adminButton.style.display = " inline-block"
+        }
+    }
+    document.addEventListener("DOMContentLoaded", addAdminButton);
+</script>
 </body>
 </html>
